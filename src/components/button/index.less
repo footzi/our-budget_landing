@@ -1,0 +1,21 @@
+.button {
+  transition: 0.3s background-color;
+  border-radius: 9px;
+  display: inline-block;
+  box-shadow: none;
+  color: @white;
+  background-color: @flower;
+  padding: 14px 32px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: @purple;
+    color: @white;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid @flower;
+  }
+}

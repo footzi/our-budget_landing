@@ -1,0 +1,32 @@
+.header {
+  height: 90px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: @white;
+  z-index: 1;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  &__link img {
+    display: block;
+    height: 67px;
+  }
+
+  &__buttons {
+    a:not(:last-child) {
+      margin-right: 28px;
+    }
+  }
+}
