@@ -3,6 +3,14 @@
 @font-face {
   font-display: swap;
   font-family: 'Roboto';
+  src: url('/public/fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
   src: url('/public/fonts/Roboto-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
@@ -35,4 +43,21 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.h3 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+mark {
+  color: @flower;
+  background-color: transparent;
 }

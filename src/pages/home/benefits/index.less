@@ -1,0 +1,45 @@
+.benefits {
+  max-width: 1440px;
+  margin: 250px auto 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__content {
+    margin-top: 96px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    margin-left: 80px;
+    margin-bottom: 80px;
+    list-style-type: none;
+    width: 630px;
+
+    li {
+      font-size: 30px;
+      line-height: 35px;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 52px;
+      }
+
+      &:before {
+        content: "\2605";
+        font-size: 16px;
+        line-height: 16px;
+        color: @flower;
+        margin-right: 35px;
+      }
+    }
+  }
+
+  &__devices {
+    display: block;
+    width: 500px;
+  }
+}
