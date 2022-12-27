@@ -1,0 +1,7 @@
+mixin dropdown(title, content)
+    .dropdown(aria-expanded="false")
+        .dropdown__header(tabindex=0)
+            span= title
+            <svg width="31" height="14" viewBox="0 0 31 14" fill="none"><path d="M1 1L13.4974 12.2045C14.637 13.2263 16.363 13.2263 17.5026 12.2045L30 1"/></svg>
+        .dropdown__container
+            .dropdown__content=content

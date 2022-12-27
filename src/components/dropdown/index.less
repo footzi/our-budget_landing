@@ -1,0 +1,45 @@
+.dropdown {
+  border-bottom: 1px solid @white;
+  font-size: 30px;
+  line-height: 35px;
+  color: @white;
+  padding: 48px 0;
+
+  &.is-open {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline-offset: 2px;
+      outline: 2px solid @white;
+    }
+
+    svg {
+      transition: transform 0.3s;
+      stroke: @white;
+    }
+  }
+
+  &__container {
+    transition: height 0.3s;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 48px;
+  }
+}
