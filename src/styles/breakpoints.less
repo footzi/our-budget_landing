@@ -59,3 +59,21 @@
     @a()
   }
 }
+
+.mobile-wide(@a) {
+  @media (min-width: @screen-sm) {
+    @a()
+  }
+}
+
+.tablet(@a) {
+  @media (min-width: @screen-md) {
+    @a()
+  }
+}
+
+.laptop(@a) {
+  @media (min-width: @screen-lg) {
+    @a()
+  }
+}
