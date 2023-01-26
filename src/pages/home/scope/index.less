@@ -1,92 +1,94 @@
 @import "@/styles";
 
 .scope {
-  max-width: 320px;
-  margin: 138px auto 0 auto;
-  padding: 0 22px;
+  .layout();
+  margin-top: 60px;
 
-  .sm({
-    max-width: 1440px;
-    margin: 142px auto 0 auto;
+  .mobile-wide({
+    margin-top: 180px;
+  });
+
+  .tablet({
+    margin-top: 202px;
+  });
+
+  .laptop({
+    margin-top: 330px;
   });
 
   &__title {
+    .col(24);
+    .text-size-2();
     text-align: center;
+
+    .mobile-wide({
+      color: @white;
+    })
   }
 
   &__sub-title {
+    .col(24);
+    .text-size-4();
     text-align: center;
-    margin-top: 16px;
+    margin-top: 14px;
+
+    .mobile-wide({
+      color: @white;
+    });
   }
 
   &__cards {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-    //display: grid;
-    //grid-template-columns: 1fr;
-    //grid-gap: 48px;
-    margin-top: 152px;
+    .grid();
+    grid-row-gap: 28px;
+    margin-top: 30px;
 
-    .md({
-      //grid-template-columns: 500px 500px;
-      justify-content: center;
+    .tablet({
+      margin-top: 56px;
+      grid-row-gap: 12px;
     })
   }
 
   &__card {
+    .col(24);
     background-color: @white;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
-    padding: 24px;
-    width: 100%;
+    padding: 32px 24px;
 
-    .md({
-      max-width: 290px;
+    .tablet({
+      padding: 42px 60px;
+      .col(1, 3, 23);
     });
 
-    .xl({
-      max-width: 500px;
-      padding: 32px;
-    });
+    .laptop({
+      .col(12);
+      padding: 56px 60px;
 
-    &-top {
-      padding-right: 48px;
-    }
+      &:nth-child(even) {
+        .col(12, 13);
+      }
+    });
 
     &-title {
+      .text-size-2();
+      text-align: center;
       font-weight: 500;
+
+      .tablet({
+        text-align: left;
+      })
     }
 
     &-desription {
-      margin-top: 12px;
-      font-size: 16px;
-      line-height: 20px;
-      //font-size: 20px;
-      //line-height: 25px;
-      //margin-top: 12px;
+      .text-size-4();
+      line-height: 24px;
+      margin-top: 24px;
+      text-align: center;
 
-      .xl({
-        font-size: 18px;
-        line-height: 22px;
+      .tablet({
+        text-align: left;
+        line-height: 24px;
       })
-    }
-
-    &-info {
-      font-size: 16px;
-      line-height: 20px;
-      //font-size: 20px;
-      //line-height: 25px;
-      margin-top: 42px;
-      color: @flower;
-      width: 80%;
-      margin-left: auto;
-      font-weight: 300;
-
-      .xl({
-        font-size: 18px;
-        line-height: 22px;
-      })
-    }
+      }
   }
 }

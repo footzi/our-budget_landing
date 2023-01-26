@@ -1,6 +1,6 @@
 @import "breakpoints";
 
-.max-content() {
+.layout() {
   max-width: 360px;
   margin: 0 auto;
   padding: 0 12px;
@@ -16,7 +16,6 @@
 }
 
 .grid() {
-  .max-content();
   display: grid;
   grid-template-columns: repeat(24, [col-start] 1fr);
   grid-column-gap: 4px;
@@ -44,6 +43,7 @@
   pointer-events: none;
 
   .grid {
+    .layout();
     .grid();
     height: 100%;
   }

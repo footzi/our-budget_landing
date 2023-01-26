@@ -1,6 +1,7 @@
 @import "@/styles";
 
 .firstscreen {
+  .layout();
   .grid();
   margin-top: 138px;
 
@@ -21,17 +22,21 @@
       background-image: url("../../../../public/images/1.svg");
       height: 539px;
 
-      .tablet({
+      .mobile-wide({
         display: none;
       })
     }
 
-    &_tablet{
+    &_mobile-wide {
       display: none;
 
-      .tablet({
+      .mobile-wide({
         display: block;
         background-image: url("../../../../public/images/2.svg");
+        height: 900px;
+      });
+
+      .tablet({
         height: 1047px;
       });
 
@@ -47,11 +52,11 @@
 
     .mobile-wide({
       .col(12);
+      color: @ash;
     });
 
     .tablet({
       .col(10);
-      color: @ash;
       margin-top: 18px;
     });
 
@@ -85,6 +90,7 @@
 
     .mobile-wide({
       .col(1, 13, 25);
+      margin-top: -24px;
     });
 
     .tablet({
@@ -100,7 +106,7 @@
     width: 100%;
     display: block;
 
-    .sm({
+    .mobile-wide({
       position: absolute;
       left: 0;
     });
@@ -109,6 +115,7 @@
       margin-top: 32px;
 
       .mobile-wide({
+        max-width: 270px;
         margin-top: 0;
       });
 
