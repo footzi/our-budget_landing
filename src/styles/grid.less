@@ -25,8 +25,14 @@
   })
 }
 
-.col(@size, @start: 1, @end: 0) {
-  grid-column: col-start @start / span @size;
+.col(@size, @start: 0, @end: 0) {
+  & when (@start = 0) {
+    grid-column: span @size;
+  }
+
+  & when (@start > 0) {
+    grid-column: col-start @start / span @size;
+  }
 
   & when (@end > 0) {
     grid-column-end: @end;
