@@ -1,14 +1,12 @@
 section.questions
-    .questions__background
-         <svg width="1920" height="1620" viewBox="0 0 1920 1620" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path d="M807.79 1268.66C1517.87 1074.14 1925 1070 1925 1070L0 1070L-9.61651e-05 1620C-9.61651e-05 1620 325.915 1400.66 807.79 1268.66Z" fill="#6D4BBF"/>
-             <rect y="550" width="1920" height="520" fill="#6D4BBF"/>
-             <path d="M1112.21 351.343C402.126 545.857 -5 550 -5 550L1920 550L1920 0C1920 0 1594.08 219.343 1112.21 351.343Z" fill="#6D4BBF"/>
-         </svg>
-    h2.h2.questions__title Часто задаваемы вопросы
-    .questions__list
-        +dropdown("Сколько стоит подписка на сервис Money Hamster?", "Какой-то Ответ")
-        +dropdown("Можно пользоваться с компьютера? А с телефона?", "Да, можно")
-        +dropdown("На сколько безопасно использование Money Hamster? ", "Очень безопасно")
+    .questions__background.questions__background_mobile
+    .questions__background.questions__background_mobile-wide
+
+    .questions__content
+        h2.questions__title Часто задаваемы вопросы
+        .questions__list
+            +dropdown("Сколько стоит подписка на сервис Money Hamster?", "Какой-то Ответ")
+            +dropdown("Можно пользоваться с компьютера? А с телефона?", "Да, можно")
+            +dropdown("На сколько безопасно использование Money Hamster? ", "Очень безопасно")
 
 
