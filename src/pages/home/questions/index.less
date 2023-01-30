@@ -17,20 +17,17 @@
       background-image: url("../../../../public/images/questions-mobile.svg");
       height: calc(100% + 300px);
 
-      .mobile-wide({
+      .tablet({
         display: none;
       })
     }
 
-    &_mobile-wide {
+    &_tablet {
       display: none;
 
-      .mobile-wide({
-        display: block;
-        background-image: url("../../../../public/images/questions-mobile-wide.svg");
-      });
-
       .tablet({
+        background-image: url("../../../../public/images/questions-mobile-wide.svg");
+        display: block;
         top: -500px;
         height: calc(100% + 850px);
       });
