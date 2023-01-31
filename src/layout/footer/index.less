@@ -1,18 +1,67 @@
+@import "@/styles";
+
 .footer {
   background-color: @ash;
   color: @white;
+  padding: 18px 0 4px 0;
+  margin-top: 52px;
+
+  .tablet({
+    padding: 32px 0 12px 0;
+    margin-top: 98px;
+  });
+
+  .laptop({
+    padding: 52px 0 22px 0;
+  });
 
   &__content {
-    max-width: 1440px;
-    margin: 280px auto 0 auto;
-    display: flex;
-    padding: 62px 0 14px 0;
-    justify-content: space-between;
+    .layout();
+    .grid();
+    text-align: center;
+
+    .mobile-wide({
+      text-align: left;
+    })
+  }
+
+  &__left {
+    .col(24);
+
+    .mobile-wide({
+      .col(15);
+    });
+
+    .tablet({
+      .col(12, 1);
+    });
+
+    .laptop({
+      .col(12, 2);
+    });
+  }
+
+  &__right {
+    .col(24);
+    order: -1;
+
+    .mobile-wide({
+      .col(9);
+      order: 0;
+      text-align: right;
+    });
+
+    .tablet({
+      .col(9, 16);
+    });
+
+    .laptop({
+      .col(7, 18);
+    })
   }
 
   &__link {
-    font-size: 16px;
-    line-height: 18px;
+    .text-size-5();
     color: @white;
     text-decoration: underline;
     font-weight: 300;
@@ -24,7 +73,6 @@
 
     &_inverse {
       text-decoration: none;
-      font-weight: 500;
 
       &:hover {
         text-decoration: underline;
@@ -33,31 +81,58 @@
   }
 
   &__nav-main {
+    display: none;
+
     ul {
       display: flex;
-      gap: 48px;
+      gap: 12px;
+
+      .tablet({
+        gap: 28px;
+      });
+
+      .laptop({
+        gap: 48px;
+      })
     }
+
+    .mobile-wide({
+      display: block;
+    });
   }
 
   &__nav-page {
-    margin-top: 52px;
+    margin-top: 42px;
+
+    .laptop({
+      margin-top: 52px;
+    });
 
     li {
       &:not(:last-child) {
-        margin-bottom: 16px;
+        margin-bottom: 4px;
+
+        .laptop({
+          margin-bottom: 12px;
+        })
       }
     }
   }
 
   &__year {
-    margin-top: 42px;
+    .text-size-5();
+    margin-top: 12px;
     font-weight: 300;
+
+    .tablet({
+      margin-top: 22px;
+    })
   }
 
   &__right {
     &-title {
-      font-size: 16px;
-      line-height: 18px;
+      .text-size-5();
+      font-weight: bold;
       margin-bottom: 12px;
     }
   }
