@@ -1,7 +1,6 @@
 @import "@/styles";
 
 .dropdown {
-  .text-size-4();
   border-bottom: 1px solid rgba(@white, 0.5);
   color: @white;
   padding: 0 12px;
@@ -22,6 +21,8 @@
   }
 
   &__header {
+    .text-size-4();
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,10 +48,12 @@
   }
 
   &__content {
+    .text-size-6();
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0 0 24px 0;
+    font-weight: 300;
   }
 }
