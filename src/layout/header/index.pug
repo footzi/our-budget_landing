@@ -6,8 +6,10 @@ header.header
             img(src="./images/logo.svg" alt="")
         div.header__buttons
             include ../../components/user-widget/index
-        button.header__menu-button(aria-label="Открыть меню")
+        button.header__menu-button(aria-label="Открыть меню")#js-mobile-menu-button
             span
             span
             span
             span
+
+    include ../../components/mobile-menu/index

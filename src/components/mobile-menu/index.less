@@ -1,0 +1,56 @@
+@import "@/styles";
+
+.mobile-menu {
+  display: none;
+
+  .desktop({
+    display: none;
+  });
+
+  &.is-show {
+    display: block;
+  }
+
+  &.is-animate {
+    .mobile-menu__content {
+      transform: translateX(0);
+    }
+
+    .mobile-menu__overlay {
+      opacity: 0.2;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: 0.3s transform;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: @white;
+
+    .mobile-wide({
+      width: 360px;
+    });
+  }
+
+  &__overlay {
+    transition: 0.3s opacity;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @ash;
+    opacity: 0;
+    z-index: 1;
+    display: none;
+
+    .mobile-wide({
+      display: block;
+    })
+  }
+}
