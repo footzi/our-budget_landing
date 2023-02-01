@@ -7,6 +7,9 @@ export class UserWidget {
     this.container = document.querySelector('#js-user-widget');
     this.links = Array.from(document.querySelectorAll('#js-app-link')) ?? [];
 
+    this.mobileLoginNav = document.querySelector('#js-mobile-menu-login-nav');
+    this.mobileAppNav = document.querySelector('#js-mobile-menu-app-nav');
+
     if (this.container) {
       this.init();
     }
@@ -26,6 +29,7 @@ export class UserWidget {
       this.renderTemplate(user);
       this.showWidget();
       this.changeLinks();
+      this.changeMobileWidget();
     } else {
       this.showWidget();
     }
@@ -75,6 +79,11 @@ export class UserWidget {
 
   showWidget() {
     this.container.classList.add('is-show');
+  }
+
+  changeMobileWidget() {
+    this.mobileLoginNav.classList.add('is-hidden');
+    this.mobileAppNav.classList.remove('is-hidden');
   }
 
   renderTemplate(user) {

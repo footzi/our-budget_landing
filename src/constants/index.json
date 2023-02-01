@@ -1,13 +1,20 @@
 {
   "email": "moneyhamsterask@gmail.com",
   "domain": "https://moneyhamster.ru",
+  "sections": {
+    "scope": "/#scope",
+    "steps": "/#steps",
+    "questions": "/#questions",
+    "about": "/#about"
+  },
   "pages": {
     "home": "/",
     "agreements": "/agreements.html",
     "privacyPolicy": "/privacy-policy.html",
     "app": "/app",
     "signup": "/app/signup",
-    "login": "/app/login"
+    "login": "/app/login",
+    "settings": "/app/settings"
   },
   "year": "2023"
 }
