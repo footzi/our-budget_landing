@@ -16,6 +16,7 @@ export class UserWidget {
     const tokens = this.getUserTokens();
 
     if (!tokens) {
+      this.showWidget();
       return;
     }
 
