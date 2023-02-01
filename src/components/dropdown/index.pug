@@ -1,6 +1,6 @@
 mixin dropdown(title, content)
-    .dropdown(aria-expanded="false")
-        .dropdown__header(tabindex=0)
+    .dropdown(aria-expanded="false" role="button" tabindex=0)
+        .dropdown__header
             span= title
             <svg width="22" height="10" viewBox="0 0 22 10" fill="none">
                 <path opacity="0.5" d="M21 1L13.0069 8.19379C11.866 9.22062 10.134 9.22062 8.99311 8.19379L1 1" stroke="white"/>

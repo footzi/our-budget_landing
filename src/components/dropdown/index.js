@@ -1,51 +1,48 @@
 export class Dropdown {
-    constructor(dropdown) {
-        this.dropdown = dropdown;
-        this.header = this.dropdown.querySelector('.dropdown__header');
-        this.content = this.dropdown.querySelector('.dropdown__content');
-        this.container = this.dropdown.querySelector('.dropdown__container');
+  constructor(dropdown) {
+    this.dropdown = dropdown;
+    this.content = this.dropdown.querySelector('.dropdown__content');
+    this.container = this.dropdown.querySelector('.dropdown__container');
 
-        this.isOpen = false;
+    this.isOpen = false;
 
-        this.bindEvents();
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    this.dropdown.addEventListener('click', this.handleClick.bind(this));
+    this.dropdown.addEventListener('keydown', (event) => {
+      const isEnter = event.code === 'Enter' || event.code === '13';
+      const isSpace = event.code === 'Space' || event.code === '32';
+
+      if (isEnter || isSpace) {
+        this.handleClick();
+      }
+    });
+  }
+
+  handleClick() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
     }
+  }
 
-    bindEvents() {
-        this.header.addEventListener('click', this.handleClick.bind(this));
-        this.header.addEventListener('keydown', (event) => {
-            event.preventDefault();
+  open() {
+    const contentHeight = this.content.offsetHeight;
+    this.container.style.height = contentHeight + 'px';
+    this.dropdown.classList.add('is-open');
+    this.dropdown.setAttribute('aria-expanded', true);
 
-            const isEnter = event.code === "Enter" || event.code === "13";
-            const isSpace = event.code === "Space" || event.code === "32";
+    this.isOpen = true;
+  }
 
-            if (isEnter || isSpace) {
-                this.handleClick();
-            }
-        });
-    }
+  close() {
+    this.container.style.height = 0;
+    this.dropdown.classList.remove('is-open');
+    this.dropdown.setAttribute('aria-expanded', false);
 
-    handleClick() {
-        if (this.isOpen) {
-            this.close();
-        } else {
-            this.open();
-        }
-    }
-
-    open() {
-        const contentHeight = this.content.offsetHeight;
-        this.container.style.height = contentHeight + 'px';
-        this.dropdown.classList.add('is-open');
-        this.dropdown.setAttribute('aria-expanded', true)
-
-        this.isOpen = true;
-    }
-
-    close() {
-        this.container.style.height = 0;
-        this.dropdown.classList.remove('is-open');
-        this.dropdown.setAttribute('aria-expanded', false)
-
-        this.isOpen = false;
-    }
+    this.isOpen = false;
+  }
 }

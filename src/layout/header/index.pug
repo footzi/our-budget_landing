@@ -1,10 +1,11 @@
+- var CONSTANTS = require("../../constants/index.json");
+
 header.header
     div.header__content
-        a(href="/").header__logo
+        a(href=`${CONSTANTS.pages.home}` aria-label="Перейти на главную страницу").header__logo
             img(src="./images/logo.svg" alt="")
         div.header__buttons
-            a(href="/login", target="_blank").link Войти
-            a(href="/signup", target="_blank").link Регистрация
+            include ../../components/user-widget/index
         button.header__menu-button(aria-label="Открыть меню")
             span
             span

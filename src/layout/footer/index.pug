@@ -1,24 +1,26 @@
+- var CONSTANTS = require("../../constants/index.json");
+
 footer.footer
     .footer__content
         .footer__left
             nav.footer__nav-main(aria-label="По главной странице")
                 ul
                     li
-                        a(href="#" target="_blank").footer__link.footer__link_inverse О нас
+                        a(href="/#about").footer__link.footer__link_inverse О нас
                     li
-                        a(href="#" target="_blank").footer__link.footer__link_inverse Основные функции
+                        a(href="/#scope").footer__link.footer__link_inverse Основные функции
                     li
-                        a(href="#" target="_blank").footer__link.footer__link_inverse Ответы на вопросы
+                        a(href="/#questions").footer__link.footer__link_inverse Ответы на вопросы
 
             nav.footer__nav-page(aria-label="По внутренним страницам")
                 ul
                     li
-                        a(href="#" target="_blank").footer__link Согласие на обработку персональных данных
+                        a(href=`${CONSTANTS.pages.agreements}` target="_blank").footer__link Согласие на обработку персональных данных
                     li
-                        a(href="#" target="_blank").footer__link Политика конфиденциальности
+                        a(href=`${CONSTANTS.pages.privacyPolicy}` target="_blank").footer__link Политика конфиденциальности
 
-            .footer__year 2023
+            .footer__year #{CONSTANTS.year}
 
         .footer__right
             .footer__right-title По всем вопросам и предложениям:
-            a(href="mailto:moneyhamster@gmail.com").footer__link moneyhamster@gmail.com
+            a(href=`mailto:${CONSTANTS.email}`).footer__link #{CONSTANTS.email}

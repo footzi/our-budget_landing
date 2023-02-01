@@ -1,5 +1,5 @@
-section.benefits
-    h2.benefits__title Почему <mark>Money Hamster</mark>?
+section.benefits(aria-labelledby="benefits-title")
+    h2.benefits__title#benefits-title Почему <mark>Money Hamster</mark>?
     .benefits__content
         .benefits__text
             ul.benefits__list
@@ -8,7 +8,12 @@ section.benefits
                 li Только нужные функции
                 li Приятный дизайн
                 li Удобно пользоваться как с компьютера, так и с телефона
-            img.benefits__hamster(src="./images/cool-hamster.svg" alt="")
 
-        img.benefits__devices(src="./images/devices.png" alt="")
+            img.benefits__hamster(src="./images/cool-hamster.svg" alt="" loading="lazy")
+
+        picture.benefits__devices
+            source(srcset="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4K" media="(max-width: 575px)")
+            source(srcset="./images/devices.avif" media="(min-width: 576px)")
+            source(srcset="./images/devices.webp" media="(min-width: 576px)")
+            img(src="./images/devices.png" alt="" loading="lazy")
 

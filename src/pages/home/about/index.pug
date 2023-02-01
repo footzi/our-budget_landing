@@ -1,7 +1,12 @@
-section.about
-    h2.about__title О нас
+section.about#about(aria-labelledby="about-title")
+    h2.about__title#about-title О нас
     .about__content
-        img(src="./images/about.png", alt="").about__image
+        picture.about__image
+            source(srcset="./images/about-0.5x.avif" media="(max-width: 575px)")
+            source(srcset="./images/about-0.5x.webp" media="(max-width: 575px)")
+            source(srcset="./images/about.avif" media="(min-width: 576px)")
+            source(srcset="./images/about.webp" media="(min-width: 576px)")
+            img(src="./images/about.png" alt="" loading="lazy")
         .about__text
             h4 Нас зовут Аня и Влад и это&nbsp;мы создали Money Hamster:)
             p Создавали изначально только для себя - надоело пользоваться табличками Excel, а существующие приложения нас не устраивали по разным причинам.

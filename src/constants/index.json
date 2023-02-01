@@ -1,0 +1,13 @@
+{
+  "email": "moneyhamster@gmail.com",
+  "domain": "https://moneyhamster.ru",
+  "pages": {
+    "home": "/",
+    "agreements": "/agreements.html",
+    "privacyPolicy": "/privacy-policy.html",
+    "app": "/app",
+    "signup": "/app/signup",
+    "login": "/app/login"
+  },
+  "year": "2023"
+}

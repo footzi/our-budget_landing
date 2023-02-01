@@ -19,7 +19,7 @@
     background-size: 100% 100%;
 
     &_mobile {
-      background-image: url("../../../../public/images/1.svg");
+      background-image: url("data:image/svg+xml,%3Csvg width='360' height='535' viewBox='0 0 360 535' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 120V119H16.7553C55.1384 116.748 130.121 111.606 206.385 89.9902C296.159 64.5457 302.892 19.0947 302.892 -4H359V119V120V334H360C360 334 283.862 335.514 151.067 406.6C60.9504 454.84 0 535 0 535V334V120Z' fill='%23414141'/%3E%3C/svg%3E");
       height: 539px;
 
       .mobile-wide({
@@ -32,7 +32,7 @@
 
       .mobile-wide({
         display: block;
-        background-image: url("../../../../public/images/2.svg");
+        background-image: url("data:image/svg+xml,%3Csvg width='744' height='1047' viewBox='0 0 744 1047' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M427.718 384.162C261.767 476.926 98.7455 495.461 23.3759 504.03C16.7274 504.786 10.7609 505.464 5.53462 506.109H0V506.819V656.593V657.303V1047C0 1047 125.964 891.303 312.206 797.606C543.985 680.998 692.248 660.773 732.743 657.303H744V656.593V506.819V506.109V-3.05176e-05H627.72C627.72 94.394 613.766 280.164 427.718 384.162Z' fill='%23414141'/%3E%3C/svg%3E");
         height: 900px;
       });
 
@@ -94,7 +94,7 @@
     });
 
     .tablet({
-      .col(1, 11, 25);
+      .col(1, 12, 25);
     });
 
     .laptop({
@@ -104,33 +104,15 @@
 
   &__image {
     width: 100%;
+    max-width: 100%;
     display: block;
+    margin-top: 32px;
 
     .mobile-wide({
+      margin-top: 0;
       position: absolute;
-      left: 0;
+      right: 0;
     });
-
-    &_mobile {
-      margin-top: 32px;
-
-      .mobile-wide({
-        max-width: 270px;
-        margin-top: 0;
-      });
-
-      .tablet({
-        display: none;
-      })
-    }
-
-    &_desktop {
-      display: none;
-
-      .tablet({
-        display: block;
-      })
-    }
   }
 
   &__button {

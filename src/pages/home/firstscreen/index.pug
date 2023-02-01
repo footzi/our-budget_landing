@@ -1,11 +1,18 @@
-section.firstscreen
+- var CONSTANTS = require("../../../constants/index.json");
+
+section.firstscreen(aria-labelledby="firstscreen-title")
     .firstscreen__background.firstscreen__background_mobile
     .firstscreen__background.firstscreen__background_mobile-wide
 
     div.firstscreen__text
-        h1.firstscreen__title Учет личных ДОХОДОВ и РАСХОДОВ
+        h1.firstscreen__title#firstscreen-title Учет личных ДОХОДОВ и РАСХОДОВ
         p.firstscreen__description Просто. Понятно.
     div.firstscreen__image-wrapper
-        img.firstscreen__image.firstscreen__image_mobile(src="./images/firstscreen-mobile.png" alt="")
-        img.firstscreen__image.firstscreen__image_desktop(src="./images/firstscreen-1x.png" alt="")
-    a(href="/signup", target="_blank").button.firstscreen__button Хочу попробовать!
+        picture
+            source(srcset="./images/firstscreen-mobile.avif" media="(max-width: 575px)")
+            source(srcset="./images/firstscreen-mobile.webp" media="(max-width: 575px)")
+            source(srcset="./images/firstscreen.avif" media="(min-width: 576px)")
+            source(srcset="./images/firstscreen.webp" media="(min-width: 576px)")
+            img.firstscreen__image(src="./images/firstscreen-mobile.png" alt="")
+
+    a(href=`${CONSTANTS.pages.signup}`, target="_blank").button.firstscreen__button#js-app-link Хочу попробовать!

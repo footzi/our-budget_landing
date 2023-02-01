@@ -16,6 +16,11 @@
     }
   }
 
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid @white;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -26,11 +31,6 @@
     .tablet({
       padding: 28px 0;
     });
-
-    &:focus-visible {
-      outline-offset: 2px;
-      outline: 2px solid @white;
-    }
 
     svg {
       transition: transform 0.3s;
