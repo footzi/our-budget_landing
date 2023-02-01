@@ -1,5 +1,6 @@
 - var CONSTANTS = require("../../constants/index.json");
 
 .user-widget#js-user-widget
-    a(href=`${CONSTANTS.pages.login}`, target="_blank").link Войти
-    a(href=`${CONSTANTS.pages.signup}`, target="_blank").link Регистрация
+    .user-widget__links
+        a(href=`${CONSTANTS.pages.login}`, target="_blank").link Войти
+        a(href=`${CONSTANTS.pages.signup}`, target="_blank").link Регистрация
