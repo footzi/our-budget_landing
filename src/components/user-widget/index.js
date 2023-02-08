@@ -5,7 +5,7 @@ import CONSTANTS from '@/constants/index.json';
 export class UserWidget {
   constructor() {
     this.container = document.querySelector('#js-user-widget');
-    this.links = Array.from(document.querySelectorAll('#js-app-link')) ?? [];
+    this.links = Array.from(document.querySelectorAll('.js-app-link')) ?? [];
 
     this.mobileLoginNav = document.querySelector('#js-mobile-menu__login-nav');
     this.mobileAppNav = document.querySelector('#js-mobile-menu__app-nav');

@@ -32,6 +32,7 @@ export class MobileMenu {
 
   open() {
     this.show();
+    this.button.setAttribute('aria-label', 'Закрыть меню');
 
     setTimeout(() => {
       this.animate();
@@ -40,6 +41,7 @@ export class MobileMenu {
 
   close() {
     this.animate();
+    this.button.setAttribute('aria-label', 'Открыть меню');
 
     setTimeout(() => {
       this.show();
