@@ -1,3 +1,5 @@
+@import "@/styles";
+
 .button {
   transition: 0.3s background-color;
   border-radius: 9px;
@@ -5,10 +7,17 @@
   box-shadow: none;
   color: @white;
   background-color: @purple;
-  padding: 14px 28px;
+  padding: 10px 22px;
   text-decoration: none;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+
+  .tablet({
+    font-size: 16px;
+    padding: 14px 28px;
+  });
 
   &:hover {
     background-color: @flower;

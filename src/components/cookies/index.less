@@ -1,0 +1,43 @@
+@import "@/styles";
+
+.cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: @white;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(100%);
+
+  &.is-show {
+    transition: 0.3s transform;
+    transform: translateY(0);
+  }
+
+  .desktop({
+    padding-top: 42px;
+    padding-bottom: 34px;
+  });
+
+  &__content {
+    .layout();
+
+    .mobile-wide({
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    })
+  }
+
+  &__text {
+    .text-size-4();
+    margin-bottom: 12px;
+
+    .mobile-wide({
+      margin-right: 52px;
+      margin-bottom: 0;
+    })
+  }
+}
