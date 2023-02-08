@@ -3,13 +3,13 @@
 .mobile-menu#js-mobile-menu
     .mobile-menu__content
         nav
-            ul.mobile-menu__list#js-mobile-menu-login-nav
+            ul.mobile-menu__list#js-mobile-menu__login-nav
                 li
                     a(href=`${CONSTANTS.pages.login}`).mobile-menu__link Войти
                 li
                     a(href=`${CONSTANTS.pages.signup}`).mobile-menu__link Зарегистрироваться
 
-            ul.mobile-menu__list.is-hidden#js-mobile-menu-app-nav
+            ul.mobile-menu__list.is-hidden#js-mobile-menu__app-nav
                 li
                     a(href=`${CONSTANTS.pages.app}`).mobile-menu__link
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,5 +32,5 @@
                     a(href=`${CONSTANTS.sections.questions}`).mobile-menu__link Ответы на вопросы
                 li
                     a(href=`${CONSTANTS.sections.about}`).mobile-menu__link О нас
-    .mobile-menu__overlay
+    .mobile-menu__overlay#js-mobile-menu__overlay
 
