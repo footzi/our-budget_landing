@@ -7,3 +7,4 @@ npm-debug.log*
 **/__snapshots__/**/*.diff.png
 .idea
 /dist
+.env

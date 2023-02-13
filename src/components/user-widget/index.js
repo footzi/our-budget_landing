@@ -18,6 +18,10 @@ export class UserWidget {
   async init() {
     const tokens = this.getUserTokens();
 
+    if (tokens) {
+      this.changeLinks('Войти', CONSTANTS.pages.login);
+    }
+
     if (!tokens) {
       this.showWidget();
       return;
@@ -28,7 +32,7 @@ export class UserWidget {
     if (user) {
       this.renderTemplate(user);
       this.showWidget();
-      this.changeLinks();
+      this.changeLinks('Войти', CONSTANTS.pages.app);
       this.changeMobileWidget();
     } else {
       this.showWidget();
@@ -91,9 +95,10 @@ export class UserWidget {
     this.container.innerHTML = template({ firstName: user.firstName });
   }
 
-  changeLinks() {
+  changeLinks(name, href) {
     this.links.forEach((link) => {
-      link.setAttribute('href', CONSTANTS.pages.app);
+      link.innerHTML = name;
+      link.setAttribute('href', href);
     });
   }
 }

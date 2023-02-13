@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode=production --env production",
-    "upgrade:dep": "npm-upgrade"
+    "upgrade:dep": "npm-upgrade",
+    "deploy:prod": "bash ./deploy/prod.bash"
   },
   "repository": {
     "type": "git",
