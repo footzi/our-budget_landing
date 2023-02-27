@@ -16,66 +16,29 @@ export class UserWidget {
   }
 
   async init() {
-    const tokens = this.getUserTokens();
+    const userName = this.getUserName();
 
-    if (tokens) {
+    if (userName) {
+      this.renderTemplate(userName);
       this.changeLinks('Войти', CONSTANTS.pages.login);
-    }
-
-    if (!tokens) {
-      this.showWidget();
-      return;
-    }
-
-    const user = await this.getUser(tokens);
-
-    if (user) {
-      this.renderTemplate(user);
-      this.showWidget();
       this.changeLinks('Войти', CONSTANTS.pages.app);
+      this.showWidget();
       this.changeMobileWidget();
-    } else {
+    }
+
+    if (!userName) {
       this.showWidget();
     }
   }
 
-  getUserTokens() {
+  getUserName() {
     try {
       const value = localStorage.getItem(USER_LS);
 
       if (!value) {
         return null;
       }
-      return JSON.parse(value).tokens ?? null;
-    } catch {
-      return null;
-    }
-  }
-
-  async getUser(tokens) {
-    const accessToken = tokens?.accessToken;
-
-    if (!accessToken) {
-      return null;
-    }
-
-    const header = `Bearer ${accessToken}`;
-
-    try {
-      const response = await fetch('/api/users', {
-        method: 'GET',
-        headers: {
-          Authorization: header,
-        },
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data?.user) {
-        return data.user;
-      } else {
-        throw new Error();
-      }
+      return JSON.parse(value).firstName ?? null;
     } catch {
       return null;
     }
@@ -90,9 +53,9 @@ export class UserWidget {
     this.mobileAppNav.classList.remove('is-hidden');
   }
 
-  renderTemplate(user) {
+  renderTemplate(firstName) {
     this.container.innerHTML = '';
-    this.container.innerHTML = template({ firstName: user.firstName });
+    this.container.innerHTML = template({ firstName });
   }
 
   changeLinks(name, href) {
