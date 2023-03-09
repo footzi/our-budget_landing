@@ -19,6 +19,7 @@ export class Dropdown {
         this.handleClick();
       }
     });
+    window.addEventListener('resize', this.repaint.bind(this));
   }
 
   handleClick() {
@@ -44,5 +45,14 @@ export class Dropdown {
     this.dropdown.setAttribute('aria-expanded', false);
 
     this.isOpen = false;
+  }
+
+  repaint() {
+    if (!this.isOpen) {
+      return;
+    }
+
+    const contentHeight = this.content.offsetHeight;
+    this.container.style.height = contentHeight + 'px';
   }
 }
