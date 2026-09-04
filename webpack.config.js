@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -15,12 +14,13 @@ module.exports = (env) => {
     output: {
       filename: `index.js?v${Date.now()}`,
       path: path.resolve(__dirname, 'dist'),
+      clean: true,
     },
     module: {
       rules: [
         {
           test: /\.pug$/,
-          loader: 'pug-loader',
+          loader: '@webdiscus/pug-loader',
         },
         {
           test: /\.less$/,
@@ -35,7 +35,6 @@ module.exports = (env) => {
       },
     },
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/pages/home', 'index.pug'),
         filename: './index.html',
@@ -59,7 +58,7 @@ module.exports = (env) => {
       static: {
         directory: path.resolve(__dirname, 'public'),
       },
-      port: '3001',
+      port: 3001,
       hot: true,
     },
     optimization: {

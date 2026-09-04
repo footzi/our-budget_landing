@@ -1,4 +1,5 @@
 - var CONSTANTS = require("../../constants/index.json");
+- var currentYear = new Date().getFullYear();
 
 footer.footer
     .footer__content
@@ -19,7 +20,7 @@ footer.footer
                     li
                         a(href=`${CONSTANTS.pages.privacyPolicy}` target="_blank").footer__link Политика конфиденциальности
 
-            .footer__year #{CONSTANTS.year}
+            .footer__year.js-current-year #{currentYear}
 
         .footer__right
             .footer__right-title По всем вопросам и предложениям:

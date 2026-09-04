@@ -8,6 +8,10 @@ document.querySelectorAll('.dropdown').forEach((dropdown) => {
   new Dropdown(dropdown);
 });
 
+document.querySelectorAll('.js-current-year').forEach((element) => {
+  element.textContent = String(new Date().getFullYear());
+});
+
 new UserWidget();
 new MobileMenu();
 new Cookies();
